@@ -22,7 +22,6 @@ requirements:
     - pkgconfig
   host:
     - cython >=0.24
-    - pip
     - setuptools
     - boost
     - python
@@ -32,10 +31,12 @@ requirements:
     - pytest-runner
   run:
     - boost
+    - cython >=0.24
     - python
-    - numpy
+    - {{ pin_compatible('numpy') }}
     - pandas  >=0.15.0
     - armadillo >=6.500.0
+    - pytest-runner
 
 test:
   imports:
