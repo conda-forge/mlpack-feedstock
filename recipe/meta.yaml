@@ -1,5 +1,5 @@
 {% set version = "3.0.2" %}
-{% set build_number = 1 %}
+{% set build_number = 2 %}
 
 {% set variant = "openblas" %}
 {% set build_number = build_number + 200 %}
@@ -16,7 +16,7 @@ source:
 
 build:
   number: {{ build_number }}
-  skip: true  # [win or osx]
+  skip: true  # [win]
   features:
     - blas_{{ variant }}
 
@@ -24,8 +24,8 @@ requirements:
   build:
     - {{ compiler('c') }}
     - {{ compiler('cxx') }}
-    - cmake
-    - pkgconfig
+    - cmake >=2.8.12
+    - pkgconfig  # [unix]
   host:
     - cython >=0.24
     - setuptools
@@ -45,6 +45,7 @@ requirements:
     - armadillo >=6.500.0,<8.300.0
     - blas 1.1 {{ variant }}
     - openblas
+
 test:
   imports:
     - mlpack
