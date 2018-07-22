@@ -1,4 +1,8 @@
 {% set version = "3.0.2" %}
+{% set build_number = 1 %}
+
+{% set variant = "openblas" %}
+{% set build_number = build_number + 200 %}
 
 
 package:
@@ -11,30 +15,36 @@ source:
     sha256: 69e81178839594049d84526b8f9612825f238f7cfe1f6d579bd6461ed48e5aa0
 
 build:
-  number: 0
+  number: {{ build_number }}
   skip: true  # [win or osx]
+  features:
+    - blas_{{ variant }}
 
 requirements:
   build:
     - {{ compiler('c') }}
     - {{ compiler('cxx') }}
     - cmake
+    - pkgconfig
   host:
     - cython >=0.24
-    - pip
+    - setuptools
     - boost
     - python
     - numpy
     - pandas  >=0.15.0
-    - armadillo >=6.500.0
+    - armadillo >=6.500.0,<8.300.0
     - pytest-runner
+    - blas 1.1 {{ variant }}
+    - openblas
   run:
     - boost
     - python
-    - numpy
+    - {{ pin_compatible('numpy') }}
     - pandas  >=0.15.0
-    - armadillo >=6.500.0
-
+    - armadillo >=6.500.0,<8.300.0
+    - blas 1.1 {{ variant }}
+    - openblas
 test:
   imports:
     - mlpack

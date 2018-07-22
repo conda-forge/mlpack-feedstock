@@ -1,4 +1,4 @@
-mkdir build
+mkdir -p build
 cd build
 
 cmake \
@@ -9,6 +9,7 @@ cmake \
 	-DBUILD_CLI_EXECUTABLES=ON \
 	-DBUILD_SHARED_LIBRARIES=ON \
 	-DFORCE_CXX11=OFF \
+	-DBUILD_TESTS=OFF \
 	../
 
 make -j${CPU_COUNT}
