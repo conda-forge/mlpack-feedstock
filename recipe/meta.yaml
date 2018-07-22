@@ -11,7 +11,7 @@ source:
     sha256: 69e81178839594049d84526b8f9612825f238f7cfe1f6d579bd6461ed48e5aa0
 
 build:
-  number: 0
+  number: 1
   skip: true  # [win or osx]
 
 requirements:
@@ -19,9 +19,11 @@ requirements:
     - {{ compiler('c') }}
     - {{ compiler('cxx') }}
     - cmake
+    - pkgconfig
   host:
     - cython >=0.24
     - pip
+    - setuptools
     - boost
     - python
     - numpy
