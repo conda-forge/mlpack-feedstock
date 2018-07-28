@@ -10,6 +10,7 @@ cmake \
 	-DBUILD_SHARED_LIBRARIES=ON \
 	-DFORCE_CXX11=OFF \
 	-DBUILD_TESTS=OFF \
+        -DUSE_OPENMP=OFF \
 	../
 
 make -j${CPU_COUNT}
