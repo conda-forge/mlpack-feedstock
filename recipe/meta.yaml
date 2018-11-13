@@ -1,5 +1,5 @@
-{% set version = "3.0.2" %}
-{% set build_number = 2 %}
+{% set version = "3.0.4" %}
+{% set build_number = 0 %}
 
 {% set variant = "openblas" %}
 {% set build_number = build_number + 200 %}
@@ -12,7 +12,7 @@ package:
 source:
     fn: mlpack-{{ version }}.tar.gz
     url: http://www.mlpack.org/files/mlpack-{{ version }}.tar.gz
-    sha256: 69e81178839594049d84526b8f9612825f238f7cfe1f6d579bd6461ed48e5aa0
+    sha256: 5f732207c6cc1347c89cd12331fff2b0675c16697540c4e7711761115c34b3a6
 
 build:
   number: {{ build_number }}
