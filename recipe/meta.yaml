@@ -23,17 +23,17 @@ build:
 requirements:
   build:
     - cmake >=3.3.2
-    - {{ pin_compatible('numpy') }}
     - {{ compiler('c') }}
     - {{ compiler('cxx') }}
+    - pkg-config
 
   host:
     - {{ compiler('c') }}
     - {{ compiler('cxx') }}
-    - pkgconfig
     - cython >=0.24
     - setuptools
     - boost
+    - openmp
     - python
     - numpy
     - pandas  >=0.15.0
@@ -44,7 +44,9 @@ requirements:
 
   run:
     - boost
+    - openmp
     - python
+    - {{ pin_compatible('numpy') }}
     - pandas  >=0.15.0
     - armadillo >=6.500.0
     - blas 1.1 {{ variant }}
@@ -62,7 +64,7 @@ about:
     license: BSD-3.0
     license_file: LICENSE.txt
     summary: 'mlpack a fast, flexible machine learning library'
-    descriptio: |
+    description: |
       mlpack is an intuitive, fast, and flexible C++ machine learning library
       with bindings to other languages. It is meant to be a machine learning analog
       to LAPACK, and aims to implement a wide array of machine learning methods and
