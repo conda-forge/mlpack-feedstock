@@ -13,6 +13,7 @@ cmake \
         -DBOOST_INCLUDEDIR="${PREFIX}/include" \
         -DBOOST_LIBRARYDIR="${PREFIX}/lib" \
         -DBOOST_ROOT="${PREFIX}" \
+	-DUSE_OPENMP=OFF \
 	..
 
 make -j${CPU_COUNT} VERBOSE=1
