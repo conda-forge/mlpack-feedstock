@@ -33,7 +33,6 @@ requirements:
     - cython >=0.24
     - setuptools
     - boost
-    - openmp
     - python
     - numpy
     - pandas  >=0.15.0
@@ -44,7 +43,6 @@ requirements:
 
   run:
     - boost
-    - openmp
     - python
     - {{ pin_compatible('numpy') }}
     - pandas  >=0.15.0
