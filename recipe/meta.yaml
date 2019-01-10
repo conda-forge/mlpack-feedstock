@@ -13,6 +13,7 @@ source:
     fn: mlpack-{{ version }}.tar.gz
     url: http://www.mlpack.org/files/mlpack-{{ version }}.tar.gz
     sha256: d02a84fdc7a3b07064f2dcb925b6a1d109f5e99eed990a4552c50ab7a9fd69cc
+    patches: edit_python_cmake.patch
 
 build:
   number: {{ build_number }}
