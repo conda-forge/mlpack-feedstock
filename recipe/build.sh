@@ -3,8 +3,6 @@ cd build
 
 cmake \
         -G "${CMAKE_GENERATOR}" \
-	-DCMAKE_INSTALL_PREFIX:PATH=${PREFIX} \
-	-DCMAKE_PREFIX_PATH:PATH=${PREFIX} \
 	-DBUILD_PYTHON_BINDINGS=ON \
 	-DBUILD_CLI_EXECUTABLES=ON \
 	-DBUILD_SHARED_LIBRARIES=ON \
@@ -17,4 +15,4 @@ cmake \
 	..
 
 make -j${CPU_COUNT} VERBOSE=1
-make DESTDIR=$PREFIX install
+make install
