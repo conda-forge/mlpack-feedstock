@@ -1,0 +1,31 @@
+diff -Naur a/CMakeLists.txt b/CMakeLists.txt
+--- a/CMakeLists.txt	2018-11-13 20:33:55.000000000 -0200
++++ b/CMakeLists.txt	2019-01-12 11:44:04.595991724 -0200
+@@ -185,6 +185,8 @@
+   add_definitions(-DTEST_VERBOSE)
+ endif()
+ 
++set(Boost_LIBRARIES "")
++
+ # If the user asked for extra Armadillo debugging output, turn that on.
+ if(ARMA_EXTRA_DEBUG)
+   add_definitions(-DARMA_EXTRA_DEBUG)
+@@ -569,5 +571,5 @@
+ 
+   # Do we need a different directory?
+   install(FILES ${CMAKE_CURRENT_BINARY_DIR}/lib/pkgconfig/mlpack.pc
+-      DESTINATION lib/pkgconfig/)
++      DESTINATION ${CMAKE_INSTALL_PREFIX}/lib/pkgconfig/)
+ endif ()
+diff -Naur a/src/mlpack/bindings/python/CMakeLists.txt b/src/mlpack/bindings/python/CMakeLists.txt
+--- a/src/mlpack/bindings/python/CMakeLists.txt	2018-11-13 20:33:55.000000000 -0200
++++ b/src/mlpack/bindings/python/CMakeLists.txt	2019-01-10 21:13:00.763993436 -0200
+@@ -169,7 +169,7 @@
+ install(CODE "execute_process(COMMAND mkdir -p $ENV{DESTDIR}${NEW_PYTHONPATH})")
+ install(CODE "execute_process(COMMAND ${PYTHON_EXECUTABLE}
+     \"${CMAKE_BINARY_DIR}/src/mlpack/bindings/python/setup.py\" install
+-    --prefix=${CMAKE_INSTALL_PREFIX} --root=$ENV{DESTDIR}
++    --prefix=${CMAKE_INSTALL_PREFIX} --root=$ENV{DESTDIR} --single-version-externally-managed
+     WORKING_DIRECTORY \"${CMAKE_BINARY_DIR}/src/mlpack/bindings/python/\")")
+ 
+ # Prepare __init__.py for having all of the convenience imports appended to it.
