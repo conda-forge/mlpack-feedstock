@@ -19,13 +19,13 @@ diff -Naur a/CMakeLists.txt b/CMakeLists.txt
  endif ()
 diff -Naur a/src/mlpack/bindings/python/CMakeLists.txt b/src/mlpack/bindings/python/CMakeLists.txt
 --- a/src/mlpack/bindings/python/CMakeLists.txt	2018-11-13 20:33:55.000000000 -0200
-+++ b/src/mlpack/bindings/python/CMakeLists.txt	2019-01-10 21:13:00.763993436 -0200
++++ b/src/mlpack/bindings/python/CMakeLists.txt	2019-01-12 13:57:37.519988473 -0200
 @@ -169,7 +169,7 @@
  install(CODE "execute_process(COMMAND mkdir -p $ENV{DESTDIR}${NEW_PYTHONPATH})")
  install(CODE "execute_process(COMMAND ${PYTHON_EXECUTABLE}
      \"${CMAKE_BINARY_DIR}/src/mlpack/bindings/python/setup.py\" install
 -    --prefix=${CMAKE_INSTALL_PREFIX} --root=$ENV{DESTDIR}
-+    --prefix=${CMAKE_INSTALL_PREFIX} --root=$ENV{DESTDIR} --single-version-externally-managed
++    --prefix=${CMAKE_INSTALL_PREFIX} --single-version-externally-managed --no-deps --ignore-installed --no-cache-dir -vvv
      WORKING_DIRECTORY \"${CMAKE_BINARY_DIR}/src/mlpack/bindings/python/\")")
  
  # Prepare __init__.py for having all of the convenience imports appended to it.
