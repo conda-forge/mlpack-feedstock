@@ -41,6 +41,7 @@ requirements:
     - pytest-runner
     - blas 1.1 {{ variant }}
     - openblas
+    - pkg-config
 
   run:
     - boost
