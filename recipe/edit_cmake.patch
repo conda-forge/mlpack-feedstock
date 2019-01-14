@@ -25,7 +25,7 @@ diff -Naur a/src/mlpack/bindings/python/CMakeLists.txt b/src/mlpack/bindings/pyt
  install(CODE "execute_process(COMMAND ${PYTHON_EXECUTABLE}
      \"${CMAKE_BINARY_DIR}/src/mlpack/bindings/python/setup.py\" install
 -    --prefix=${CMAKE_INSTALL_PREFIX} --root=$ENV{DESTDIR}
-+    --prefix=${CMAKE_INSTALL_PREFIX} --single-version-externally-managed --no-deps --ignore-installed --no-cache-dir -vvv
++    --prefix=${CMAKE_INSTALL_PREFIX} --single-version-externally-managed --ignore-installed --no-cache-dir -vvv
      WORKING_DIRECTORY \"${CMAKE_BINARY_DIR}/src/mlpack/bindings/python/\")")
  
  # Prepare __init__.py for having all of the convenience imports appended to it.
