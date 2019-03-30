@@ -24,12 +24,6 @@ requirements:
     - {{ pin_compatible('numpy') }}
     - {{ compiler('c') }}
     - {{ compiler('cxx') }}
-  host:
-    - libblas
-    - libcblas
-    - {{ compiler('c') }}
-    - {{ compiler('cxx') }}
-    - boost-cpp
     - pkgconfig
   host:
     - libblas
