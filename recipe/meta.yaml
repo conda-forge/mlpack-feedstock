@@ -29,6 +29,7 @@ requirements:
     - libcblas
     - {{ compiler('c') }}
     - {{ compiler('cxx') }}
+    - boost-cpp
     - pkgconfig
   host:
     - libblas
