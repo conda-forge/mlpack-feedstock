@@ -16,15 +16,14 @@ source:
 build:
   number: {{ build_number }}
   skip: true  # [win or osx]
-  features:
 
 requirements:
   build:
     - cmake
-    - {{ pin_compatible('numpy') }}
     - {{ compiler('c') }}
     - {{ compiler('cxx') }}
     - pkgconfig
+    
   host:
     - libblas
     - libcblas
@@ -36,11 +35,14 @@ requirements:
     - pandas  >=0.15.0
     - armadillo >=6.500.0
     - pytest-runner
+    
   run:
     - boost
     - python
     - pandas  >=0.15.0
     - armadillo >=6.500.0
+    - {{ pin_compatible('numpy') }}
+    
 test:
   imports:
     - mlpack
