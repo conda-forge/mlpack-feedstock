@@ -13,7 +13,10 @@ cmake \
 	-DUSE_OPENMP=ON \
 	-DDEBUG=OFF \
 	-DPROFILE=OFF \
-	../
+	-DFORCE_CXX11=ON \
+	-DDOWNLOAD_ENSMALLEN=OFF \
+	-DENSMALLEN_INCLUDE_DIR="${PREFIX}/include" \
+	..
 
 make -j${CPU_COUNT}
 make install
