@@ -22,14 +22,10 @@ build:
 
 requirements:
   build:
-    - cmake
-    - {{ pin_compatible('numpy') }}
-    - {{ compiler('c') }}
-    - {{ compiler('cxx') }}
-  host:
-    - {{ compiler('c') }}
-    - {{ compiler('cxx') }}
     - pkgconfig
+    - cmake
+    - {{ compiler('c') }}
+    - {{ compiler('cxx') }}
   host:
     - cython >=0.24
     - setuptools
@@ -48,6 +44,7 @@ requirements:
     - armadillo >=6.500.0
     - blas 1.1 {{ variant }}
     - openblas
+    - {{ pin_compatible('numpy') }}
 test:
   imports:
     - mlpack
