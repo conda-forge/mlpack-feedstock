@@ -28,7 +28,6 @@ requirements:
     - pandas  >=0.15.0
     - armadillo >=6.500.0
     - pytest-runner
-    - blas 1.1 {{ variant }}
     - openblas
     - ensmallen >=2.10.0
     - libcblas
@@ -38,7 +37,6 @@ requirements:
     - python
     - pandas  >=0.15.0
     - armadillo >=6.500.0
-    - blas 1.1 {{ variant }}
     - openblas
     - {{ pin_compatible('numpy') }}
     - ensmallen >=2.10.0
