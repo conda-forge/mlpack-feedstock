@@ -22,7 +22,7 @@ build:
 
 requirements:
   build:
-    - pkgconfig
+    - pkg-config
     - cmake
     - {{ compiler('c') }}
     - {{ compiler('cxx') }}
