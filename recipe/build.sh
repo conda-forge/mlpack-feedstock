@@ -21,6 +21,7 @@ cmake \
 	-DBOOST_INCLUDEDIR=$PREFIX/include \
 	-DBoost_NO_SYSTEM_PATHS=ON \
 	-DBOOST_LIBRARYDIR=$PREFIX/lib \
+	-DBoost_NO_BOOST_CMAKE=1 \
 	..
 
 make -j${CPU_COUNT}
