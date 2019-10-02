@@ -17,6 +17,7 @@ requirements:
   build:
     - pkg-config
     - cmake
+    - cotire
     - {{ compiler('c') }}
     - {{ compiler('cxx') }}
   host:
