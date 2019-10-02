@@ -37,6 +37,7 @@ requirements:
     - pytest-runner
     - blas 1.1 {{ variant }}
     - openblas
+    - ensmallen >=2.10.0
   run:
     - boost
     - python
@@ -45,6 +46,7 @@ requirements:
     - blas 1.1 {{ variant }}
     - openblas
     - {{ pin_compatible('numpy') }}
+    - ensmallen >=2.10.0
 test:
   imports:
     - mlpack
