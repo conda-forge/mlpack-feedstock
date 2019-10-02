@@ -1,9 +1,4 @@
 {% set version = "3.2.1" %}
-{% set build_number = 0 %}
-
-{% set variant = "openblas" %}
-{% set build_number = build_number + 200 %}
-
 
 package:
     name: mlpack
@@ -15,7 +10,7 @@ source:
     sha256: 3fa25157a0a6e91fd5ba223ebd911e5d86c0664d969ea3f7768d823448562f36
 
 build:
-  number: {{ build_number }}
+  number: 0
   skip: true  # [win or osx]
 
 requirements:
@@ -27,7 +22,7 @@ requirements:
   host:
     - cython >=0.24
     - setuptools
-    - boost
+    - boost <1.70
     - python
     - numpy
     - pandas  >=0.15.0
@@ -39,7 +34,7 @@ requirements:
     - libcblas
     - libblas
   run:
-    - boost
+    - boost <1.70
     - python
     - pandas  >=0.15.0
     - armadillo >=6.500.0
