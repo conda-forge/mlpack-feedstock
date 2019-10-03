@@ -1,5 +1,5 @@
 diff --git a/src/mlpack/CMakeLists.txt b/src/mlpack/CMakeLists.txt
-index bf9f3886d..c8e70773e 100644
+index bf9f3886d..c1a981f88 100644
 --- a/src/mlpack/CMakeLists.txt
 +++ b/src/mlpack/CMakeLists.txt
 @@ -56,7 +56,16 @@ if(CMAKE_SYSTEM_NAME STREQUAL "Linux")
@@ -14,7 +14,7 @@ index bf9f3886d..c8e70773e 100644
 +
  set_target_properties(mlpack PROPERTIES COTIRE_CXX_PREFIX_HEADER_INIT "prereqs.hpp")
 +target_link_libraries(mlpack ${Boost_LIBRARIES})
-+target_include_directories(mlpack ${Boost_INCLUDE_DIRS})
++target_include_directories(mlpack PUBLIC ${Boost_INCLUDE_DIRS})
 +
  cotire(mlpack)
  
