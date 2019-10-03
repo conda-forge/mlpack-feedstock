@@ -1,19 +1,19 @@
 {% set version = "3.2.1" %}
 
 package:
-    name: mlpack
-    version: {{ version }}
+  name: mlpack
+  version: {{ version }}
 
 source:
-    fn: mlpack-{{ version }}.tar.gz
-    url: http://www.mlpack.org/files/mlpack-{{ version }}.tar.gz
-    sha256: 3fa25157a0a6e91fd5ba223ebd911e5d86c0664d969ea3f7768d823448562f36
+  url: http://www.mlpack.org/files/mlpack-{{ version }}.tar.gz
+  sha256: 3fa25157a0a6e91fd5ba223ebd911e5d86c0664d969ea3f7768d823448562f36
+  patches:
+    - cmake-patch.patch
 
 build:
   number: 0
   skip: true  # [win or osx]
-  patches:
-    - cmake-patch.patch
+
 
 requirements:
   build:
