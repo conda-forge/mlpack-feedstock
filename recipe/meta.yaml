@@ -12,6 +12,8 @@ source:
 build:
   number: 0
   skip: true  # [win or osx]
+  patches:
+    - cmake-patch.patch
 
 requirements:
   build:
