@@ -1,0 +1,24 @@
+diff --git a/src/mlpack/CMakeLists.txt b/src/mlpack/CMakeLists.txt
+index bf9f3886d..b12f5d0b1 100644
+--- a/src/mlpack/CMakeLists.txt
++++ b/src/mlpack/CMakeLists.txt
+@@ -17,10 +17,19 @@ foreach(dir ${DIRS})
+   add_subdirectory(${dir})
+ endforeach()
+ 
++find_package(Boost
++        COMPONENTS
++        program_options
++        serialization
++        REQUIRED)
++
+ # MLPACK_SRCS is set in the subdirectories.  The dependencies (MLPACK_LIBRARIES)
+ # are set in the root CMakeLists.txt.
+ add_library(mlpack ${MLPACK_SRCS})
+ 
++target_link_libraries(mlpack ${Boost_LIBRARIES})
++target_include_directories(mlpack PUBLIC ${Boost_INCLUDE_DIRS})
++
+ # If we are not forcing C++11 support, check that the compiler supports C++11
+ # and enable it.
+ if ((NOT FORCE_CXX11) AND
