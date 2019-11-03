@@ -12,7 +12,6 @@ build:
   number: 0
   skip: true  # [win or osx]
 
-
 requirements:
   build:
     - pkg-config
@@ -67,4 +66,3 @@ about:
 extra:
     recipe-maintainers:
       - marcelotrevisani
-      - rcurtin
