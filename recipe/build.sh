@@ -26,6 +26,10 @@ cmake \
 make -j${CPU_COUNT}
 make install
 
+
+# Workaround as the python symbols are in ``libmlpack.so`` located in ``lib``
+ln -s ${PREFIX}/lib/libmlpack.so ${SP_DIR}/libmlpack.so
+
 #	-DBOOST_INCLUDEDIR=$PREFIX/include \
 #	-DBOOST_LIBRARYDIR=$PREFIX/lib \
 #	-DBoost_NO_SYSTEM_PATHS=ON \
