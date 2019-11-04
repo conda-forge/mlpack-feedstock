@@ -1,35 +1,25 @@
-{% set version = "3.0.2" %}
-{% set build_number = 1002 %}
-
-{% set variant = "openblas" %}
-{% set build_number = build_number + 200 %}
-
+{% set version = "3.2.1" %}
 
 package:
-    name: mlpack
-    version: {{ version }}
+  name: mlpack
+  version: {{ version }}
 
 source:
-    fn: mlpack-{{ version }}.tar.gz
-    url: http://www.mlpack.org/files/mlpack-{{ version }}.tar.gz
-    sha256: 69e81178839594049d84526b8f9612825f238f7cfe1f6d579bd6461ed48e5aa0
+  url: http://www.mlpack.org/files/mlpack-{{ version }}.tar.gz
+  sha256: 3fa25157a0a6e91fd5ba223ebd911e5d86c0664d969ea3f7768d823448562f36
 
 build:
-  number: {{ build_number }}
+  number: 0
   skip: true  # [win or osx]
-  features:
-    - blas_{{ variant }}
 
 requirements:
   build:
+    - pkg-config
     - cmake
-    - {{ pin_compatible('numpy') }}
+    - make
+    - cotire
     - {{ compiler('c') }}
     - {{ compiler('cxx') }}
-  host:
-    - {{ compiler('c') }}
-    - {{ compiler('cxx') }}
-    - pkgconfig
   host:
     - cython >=0.24
     - setuptools
@@ -39,15 +29,18 @@ requirements:
     - pandas  >=0.15.0
     - armadillo >=6.500.0
     - pytest-runner
-    - blas 1.1 {{ variant }}
     - openblas
+    - ensmallen >=2.10.0
+    - libcblas
+    - libblas
   run:
     - boost
     - python
     - pandas  >=0.15.0
     - armadillo >=6.500.0
-    - blas 1.1 {{ variant }}
     - openblas
+    - {{ pin_compatible('numpy') }}
+    - ensmallen >=2.10.0
 test:
   imports:
     - mlpack
