@@ -1,4 +1,4 @@
-{% set version = "3.2.1" %}
+{% set version = "3.2.2" %}
 
 package:
   name: mlpack
@@ -6,7 +6,7 @@ package:
 
 source:
   url: http://www.mlpack.org/files/mlpack-{{ version }}.tar.gz
-  sha256: 3fa25157a0a6e91fd5ba223ebd911e5d86c0664d969ea3f7768d823448562f36
+  sha256: 7aef8c27645c9358262fec9ebba380720a086789d6519d5d1034346412a52ad6
 
 build:
   number: 0
