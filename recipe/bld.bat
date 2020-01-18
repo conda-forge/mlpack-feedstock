@@ -8,13 +8,8 @@ cd build
 
 set UNIX_PREFIX=%PREFIX:\=/%
 set UNIX_LIBRARY_PREFIX=%LIBRARY_PREFIX:\=/%
-set UNIX_LIBRARY_BIN=%LIBRARY_BIN:\=/%
-set UNIX_LIBRARY_INC=%LIBRARY_INC:\=/%
-set UNIX_LIBRARY_LIB=%LIBRARY_LIB:\=/%
-set UNIX_SP_DIR=%SP_DIR:\=/%
-set UNIX_SRC_DIR=%SRC_DIR:\=/%
 
-cmake -G "${CMAKE_GENERATOR}"                                                               ^
+cmake -G "Makefiles"                                                                        ^
 	-DCMAKE_INSTALL_PREFIX=%UNIX_LIBRARY_PREFIX%                                            ^
 	-DCMAKE_PREFIX_PATH=%UNIX_LIBRARY_PREFIX%                                               ^
 	-DCMAKE_BUILD_TYPE=Release                                                              ^
@@ -29,17 +24,18 @@ cmake -G "${CMAKE_GENERATOR}"                                                   
 	-DUSE_OPENMP=ON                                                                         ^
 	-DENSMALLEN_INCLUDE_DIR=%UNIX_PREFIX%/ensmallen/include                                 ^
 	-DARMADILLO_INCLUDE_DIR=%UNIX_PREFIX%/armadillo/include                                 ^
-	-DARMADILLO_LIBRARY=%UNIX_PREFIX%/armadillolib/libarmadillo.so                          ^
-	-DCMAKE_VERBOSE_MAKEFILE:BOOL=ON \                                                      ^
-	-DCMAKE_INSTALL_RPATH_USE_LINK_PATH=true \                                              ^
-	-DCOTIRE_MINIMUM_NUMBER_OF_TARGET_SOURCES=100000 \                                      ^
-	-DCMAKE_INSTALL_LIBDIR=lib \                                                            ^
+	-DARMADILLO_LIBRARY=%UNIX_PREFIX%/armadillo/lib/libarmadillo.so                         ^
+	-DCMAKE_VERBOSE_MAKEFILE:BOOL=ON                                                        ^
+	-DCMAKE_INSTALL_RPATH_USE_LINK_PATH=true                                                ^
+	-DCOTIRE_MINIMUM_NUMBER_OF_TARGET_SOURCES=100000                                        ^
+	-DCMAKE_INSTALL_LIBDIR=lib                                                              ^
 	..                                                                                      ^
 
 
 if errorlevel 1 exit 1
 
-cmake --build . --target install --config Release
+make install
+
 if errorlevel 1 exit 1
 
 exit 0
