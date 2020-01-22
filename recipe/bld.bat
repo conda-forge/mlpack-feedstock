@@ -1,15 +1,10 @@
-if "%ARCH%"=="64" (
-    call "C:\Program Files (x86)\Microsoft Visual Studio 14.0\VC\vcvarsall.bat" x86_amd64
-)
-
-
-mkdir build
-cd build
+mkdir -p build
+pushd build
 
 set UNIX_PREFIX=%PREFIX:\=/%
 set UNIX_LIBRARY_PREFIX=%LIBRARY_PREFIX:\=/%
 
-cmake -G "Makefiles"                                                                        ^
+cmake -G "Ninja"                                                                            ^
 	-DCMAKE_INSTALL_PREFIX=%UNIX_LIBRARY_PREFIX%                                            ^
 	-DCMAKE_PREFIX_PATH=%UNIX_LIBRARY_PREFIX%                                               ^
 	-DCMAKE_BUILD_TYPE=Release                                                              ^
@@ -32,10 +27,5 @@ cmake -G "Makefiles"                                                            
 	..                                                                                      ^
 
 
-if errorlevel 1 exit 1
-
-make install
-
-if errorlevel 1 exit 1
-
-exit 0
+ninja
+ninja install
