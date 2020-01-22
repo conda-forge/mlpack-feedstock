@@ -17,10 +17,10 @@ requirements:
     - pkg-config
     - cmake
     - make
+    - ninja  # [win]
     - cotire
     - {{ compiler('c') }}
     - {{ compiler('cxx') }}
-    - ninja  # [win]
   host:
     - cython >=0.24
     - setuptools
