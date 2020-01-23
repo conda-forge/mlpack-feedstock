@@ -21,6 +21,7 @@ requirements:
     - cotire
     - {{ compiler('c') }}
     - {{ compiler('cxx') }}
+    - armadillo >=6.500.0  # [win]
   host:
     - cython >=0.24
     - setuptools
