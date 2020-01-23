@@ -29,7 +29,7 @@ requirements:
     - python
     - numpy
     - pandas  >=0.15.0
-    - armadillo >=6.500.0
+    - armadillo >=9.200.4
     - pytest-runner
     - openblas
     - ensmallen >=2.10.0
@@ -39,7 +39,7 @@ requirements:
     - boost
     - python
     - pandas  >=0.15.0
-    - armadillo >=6.500.0
+    - armadillo >=9.200.4
     - openblas
     - {{ pin_compatible('numpy') }}
     - ensmallen >=2.10.0
