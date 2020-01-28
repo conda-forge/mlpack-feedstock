@@ -23,5 +23,7 @@ cmake -G "Ninja" ^
       -DCMAKE_INSTALL_LIBDIR=lib ^
       ..
 
+ls %PREFIX%/Library/lib
+
 ninja
 ninja install
