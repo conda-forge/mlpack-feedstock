@@ -16,14 +16,11 @@ cmake -G "Ninja" ^
       -DUSE_OPENMP=ON ^
       -DENSMALLEN_INCLUDE_DIR=%LIBRARY_PREFIX%/include ^
       -DARMADILLO_INCLUDE_DIR=%LIBRARY_PREFIX%/include ^
-      -DARMADILLO_LIBRARIES=%PREFIX%/Library/lib/libarmadillo.so ^
       -DCMAKE_VERBOSE_MAKEFILE:BOOL=ON ^
       -DCMAKE_INSTALL_RPATH_USE_LINK_PATH=true ^
       -DCOTIRE_MINIMUM_NUMBER_OF_TARGET_SOURCES=100000 ^
       -DCMAKE_INSTALL_LIBDIR=lib ^
       ..
-
-ls %PREFIX%/Library/lib
 
 ninja
 ninja install
