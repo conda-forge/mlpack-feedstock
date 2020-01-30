@@ -1,5 +1,7 @@
 mkdir -p build
 pushd build
+cmake --version
+call "C:\Program Files (x86)\Microsoft Visual Studio\2017\Enterprise\VC\Auxiliary\Build\vcvars64.bat"
 
 cmake -G "Ninja" ^
       -DCMAKE_INSTALL_PREFIX=%LIBRARY_PREFIX% ^
