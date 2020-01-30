@@ -23,6 +23,5 @@ cmake -G "Ninja" ^
       -DCMAKE_INSTALL_LIBDIR=lib ^
       ..
 
-gcc -v
 ninja
 ninja install

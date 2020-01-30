@@ -15,7 +15,7 @@ build:
 requirements:
   build:
     - pkg-config
-    - cmake ==3.11
+    - cmake
     - make
     - ninja  # [win]
     - cotire
