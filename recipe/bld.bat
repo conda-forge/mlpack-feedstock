@@ -1,7 +1,5 @@
 mkdir -p build
 pushd build
-cmake --version
-call "C:\Program Files (x86)\Microsoft Visual Studio\2017\Enterprise\VC\Auxiliary\Build\vcvars64.bat"
 
 cmake -G "Ninja" ^
       -DCMAKE_INSTALL_PREFIX=%LIBRARY_PREFIX% ^
@@ -16,6 +14,8 @@ cmake -G "Ninja" ^
       -DDOWNLOAD_ENSMALLEN=OFF ^
       -DPYTHON_EXECUTABLE=%PYTHON% ^
       -DUSE_OPENMP=ON ^
+      -DCMAKE_CXX_COMPILER=cl.exe ^
+      -DCMAKE_C_COMPILER=cl.exe
       -DENSMALLEN_INCLUDE_DIR=%LIBRARY_PREFIX%/include ^
       -DARMADILLO_INCLUDE_DIR=%LIBRARY_PREFIX%/include ^
       -Wno-dev ^
