@@ -23,6 +23,5 @@ cmake -G "Ninja" ^
       -DCMAKE_INSTALL_LIBDIR=lib ^
       ..
 
-wmic OS get OSArchitecture
 ninja
 ninja install
