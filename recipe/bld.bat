@@ -1,7 +1,7 @@
 mkdir -p build
 pushd build
 
-cmake -G "Ninja" ^
+cmake %SRC_DIR% -G "Ninja" ^
       -DCMAKE_INSTALL_PREFIX=%LIBRARY_PREFIX% ^
       -DCMAKE_PREFIX_PATH=%LIBRARY_PREFIX% ^
       -DCMAKE_BUILD_TYPE=Release ^
@@ -15,9 +15,12 @@ cmake -G "Ninja" ^
       -DPYTHON_EXECUTABLE=%PYTHON% ^
       -DUSE_OPENMP=ON ^
       -DCMAKE_CXX_COMPILER=cl.exe ^
-      -DCMAKE_C_COMPILER=cl.exe
+      -DCMAKE_C_COMPILER=cl.exe ^
+      -DBoost_NO_BOOST_CMAKE=1 ^
+      -DBOOST_INCLUDE_DIRS=%LIBRARY_PREFIX%/include ^
       -DENSMALLEN_INCLUDE_DIR=%LIBRARY_PREFIX%/include ^
       -DARMADILLO_INCLUDE_DIR=%LIBRARY_PREFIX%/include ^
+      -DARMADILLO_LIBRARIES=%LIBRARY_PREFIX%lib/armadillo.lib ^
       -Wno-dev ^
       -DCMAKE_VERBOSE_MAKEFILE:BOOL=ON ^
       -DCMAKE_INSTALL_RPATH_USE_LINK_PATH=true ^
