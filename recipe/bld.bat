@@ -17,7 +17,7 @@ cmake %SRC_DIR% -G "Ninja" ^
       -DCMAKE_CXX_COMPILER=cl.exe ^
       -DCMAKE_C_COMPILER=cl.exe ^
       -DBoost_NO_BOOST_CMAKE=1 ^
-      -DBOOST_INCLUDE_DIRS=%LIBRARY_PREFIX%/include ^
+      -DBoost_INCLUDE_DIRS=%LIBRARY_PREFIX%/include ^
       -DENSMALLEN_INCLUDE_DIR=%LIBRARY_PREFIX%/include ^
       -DARMADILLO_INCLUDE_DIR=%LIBRARY_PREFIX%/include ^
       -DARMADILLO_LIBRARIES=%LIBRARY_PREFIX%lib/armadillo.lib ^
