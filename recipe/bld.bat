@@ -19,14 +19,14 @@ cmake %SRC_DIR% -G "Ninja" ^
       -DBoost_INCLUDE_DIRS=%LIBRARY_PREFIX%/include ^
       -DENSMALLEN_INCLUDE_DIR=%LIBRARY_PREFIX%/include ^
       -DARMADILLO_INCLUDE_DIR=%LIBRARY_PREFIX%/include ^
-      -DARMADILLO_LIBRARIES=%LIBRARY_PREFIX%lib/armadillo.lib ^
-      -DBoost_LIBRARIES=%LIBRARY_PREFIX%lib/libboost.lib ^
+      -DARMADILLO_LIBRARIES=%LIBRARY_PREFIX%/lib/armadillo.lib ^
+      -DBoost_LIBRARY_DIRS=%LIBRARY_PREFIX%/lib ^
       -DBoost_NO_BOOST_CMAKE=1 ^
       -DCMAKE_VERBOSE_MAKEFILE:BOOL=ON ^
       -DCMAKE_INSTALL_RPATH_USE_LINK_PATH=true ^
       -DCOTIRE_MINIMUM_NUMBER_OF_TARGET_SOURCES=100000 ^
       -DCMAKE_INSTALL_LIBDIR=lib ^
       ..
-
+ls %LIBRARY_PREFIX%/lib
 ninja
 ninja install
