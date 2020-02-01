@@ -22,8 +22,6 @@ cmake %SRC_DIR% -G "Ninja" ^
       -DARMADILLO_INCLUDE_DIR=%LIBRARY_PREFIX%/include ^
       -DARMADILLO_LIBRARIES=%LIBRARY_PREFIX%/lib/armadillo.lib ^
       -DBOOST_LIBRARYDIR=%LIBRARY_PREFIX%/lib ^
-      -DBoost_USE_STATIC_LIBS=ON ^
-      -DBoost_USE_STATIC_RUNTIME=ON ^
       -DBoost_NO_BOOST_CMAKE=1 ^
       -DCMAKE_VERBOSE_MAKEFILE:BOOL=ON ^
       -DCMAKE_INSTALL_RPATH_USE_LINK_PATH=true ^
@@ -31,5 +29,6 @@ cmake %SRC_DIR% -G "Ninja" ^
       -DCMAKE_INSTALL_LIBDIR=lib ^
       ..
 
+echo "##vso[task.setvariable variable=BOOST_ROOT]"$BOOST_ROOT
 ninja
 ninja install
