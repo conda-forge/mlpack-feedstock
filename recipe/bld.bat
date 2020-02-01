@@ -5,6 +5,8 @@ unset BOOST_ROOT
 echo "##vso[task.setvariable variable=BOOST_ROOT]"$BOOST_ROOT
 
 cmake %SRC_DIR% -G "Ninja" ^
+      -Wno-dev ^
+      -DBOOST_ROOT=C:\Boost ^
       -DBoost_COMPILER=cl.exe ^
       -DCMAKE_INSTALL_PREFIX=%LIBRARY_PREFIX% ^
       -DCMAKE_PREFIX_PATH=%LIBRARY_PREFIX% ^
@@ -32,6 +34,5 @@ cmake %SRC_DIR% -G "Ninja" ^
       -DCMAKE_INSTALL_LIBDIR=lib ^
       ..
 
-ls BOOST_ROOT
 ninja
 ninja install
