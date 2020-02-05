@@ -27,7 +27,6 @@ cmake %SRC_DIR% -G "Ninja" ^
       -DARMADILLO_INCLUDE_DIR=%LIBRARY_PREFIX%/include ^
       -DARMADILLO_LIBRARIES=%LIBRARY_PREFIX%/lib/armadillo.lib ^
       -DBOOST_LIBRARYDIR=%LIBRARY_PREFIX%/lib ^
-      -DBoost_LIBRARIES=%LIBRARY_PREFIX%/lib/boost_system.lib ^
       -DBoost_PROGRAM_OPTIONS_LIBRARY=%LIBRARY_PREFIX%/lib/boost_program_options.lib ^
       -DBOOST_PROGRAM_OPTIONS_DYN_LINK=1 ^
       -DBoost_NO_BOOST_CMAKE=1 ^
@@ -37,8 +36,5 @@ cmake %SRC_DIR% -G "Ninja" ^
       -DCMAKE_INSTALL_LIBDIR=lib ^
       ..
 
-ls C:/Boost
-echo "End BOOST DIR"
-ls %LIBRARY_PREFIX%/lib
 ninja
 ninja install
