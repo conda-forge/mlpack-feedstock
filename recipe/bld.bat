@@ -28,7 +28,7 @@ cmake %SRC_DIR% -G "Ninja" ^
       -DARMADILLO_LIBRARIES=%LIBRARY_PREFIX%/lib/armadillo.lib ^
       -DBOOST_LIBRARYDIR=%LIBRARY_PREFIX%/lib ^
       -DBoost_PROGRAM_OPTIONS_LIBRARY=%LIBRARY_PREFIX%/lib/boost_program_options.lib ^
-      -BOOST_ALL_DYN_LINK=1 ^
+      -DBOOST_ALL_DYN_LINK=1 ^
       -DBoost_NO_BOOST_CMAKE=1 ^
       -DCMAKE_VERBOSE_MAKEFILE:BOOL=ON ^
       -DCMAKE_INSTALL_RPATH_USE_LINK_PATH=true ^
