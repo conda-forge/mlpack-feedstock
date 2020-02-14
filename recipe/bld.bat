@@ -19,7 +19,7 @@ cmake %SRC_DIR% -G "Ninja" ^
       -DUSE_OPENMP=ON ^
       -DCMAKE_CXX_COMPILER=cl.exe ^
       -DCMAKE_C_COMPILER=cl.exe ^
-      -DBOOST_INCLUDEDIR=%LIBRARY_PREFIX%/include ^
+      -DBoost_INCLUDE_DIR=%LIBRARY_PREFIX%/include ^
       -DENSMALLEN_INCLUDE_DIR=%LIBRARY_PREFIX%/include ^
       -DARMADILLO_INCLUDE_DIR=%LIBRARY_PREFIX%/include ^
       -DARMADILLO_LIBRARIES=%LIBRARY_PREFIX%/lib/armadillo.lib ^
