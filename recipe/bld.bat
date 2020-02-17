@@ -7,7 +7,7 @@ echo "##vso[task.setvariable variable=BOOST_ROOT]"$BOOST_ROOT
 cmake %SRC_DIR% -G "Ninja" ^
       -DCMAKE_INSTALL_PREFIX=%LIBRARY_PREFIX% ^
       -DCMAKE_PREFIX_PATH=%LIBRARY_PREFIX% ^
-      -DBoost::boost=%LIBRARY_PREFIX%/include ^
+      -DBOOST_ALL_NO_LIB=1 ^
       -DCMAKE_BUILD_TYPE=Release ^
       -DBUILD_PYTHON_BINDINGS=ON ^
       -DBUILD_CLI_EXECUTABLES=ON ^
@@ -20,7 +20,7 @@ cmake %SRC_DIR% -G "Ninja" ^
       -DUSE_OPENMP=ON ^
       -DCMAKE_CXX_COMPILER=cl.exe ^
       -DCMAKE_C_COMPILER=cl.exe ^
-      -DBoost_INCLUDE_DIR=%LIBRARY_PREFIX%/include ^
+      -DBOOST_INCLUDEDIR=%LIBRARY_PREFIX%/include ^
       -DENSMALLEN_INCLUDE_DIR=%LIBRARY_PREFIX%/include ^
       -DARMADILLO_INCLUDE_DIR=%LIBRARY_PREFIX%/include ^
       -DARMADILLO_LIBRARIES=%LIBRARY_PREFIX%/lib/armadillo.lib ^
