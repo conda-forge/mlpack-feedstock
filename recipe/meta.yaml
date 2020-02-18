@@ -24,8 +24,8 @@ requirements:
   host:
     - cython >=0.24
     - setuptools
-    - boost # [not Win]
-    - boost ==1.69.0 # [Win]
+    - boost  # [not Win]
+    - boost ==1.69.0  # [Win]
     - python
     - numpy
     - pandas  >=0.15.0
@@ -36,8 +36,8 @@ requirements:
     - libcblas
     - libblas
   run:
-    - boost # [not Win]
-    - boost ==1.69.0 # [Win]
+    - boost  # [not Win]
+    - boost ==1.69.0  # [Win]
     - python
     - pandas  >=0.15.0
     - armadillo >=9.200.4
