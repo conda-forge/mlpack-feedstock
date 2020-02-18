@@ -7,7 +7,7 @@ echo "##vso[task.setvariable variable=BOOST_ROOT]"$BOOST_ROOT
 cmake %SRC_DIR% -G "Ninja" ^
       -DCMAKE_INSTALL_PREFIX=%LIBRARY_PREFIX% ^
       -DCMAKE_PREFIX_PATH=%LIBRARY_PREFIX% ^
-      -DBOOST_PROGRAM_OPTIONS_DYN_LINK=1 ^
+      -DBOOST_ALL_DYN_LINK=1 ^
       -DBOOST_ALL_NO_LIB=1 ^
       -DCMAKE_BUILD_TYPE=Release ^
       -DBUILD_PYTHON_BINDINGS=ON ^
