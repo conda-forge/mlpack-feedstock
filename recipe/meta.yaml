@@ -1,4 +1,4 @@
-{% set version = "3.2.2" %}
+{% set version = "3.3.1" %}
 
 package:
   name: mlpack
@@ -6,14 +6,11 @@ package:
 
 source:
   url: http://www.mlpack.org/files/mlpack-{{ version }}.tar.gz
-  sha256: 7aef8c27645c9358262fec9ebba380720a086789d6519d5d1034346412a52ad6
+  sha256: 310f95faa93b975c1489344ae4a499eddcd825ef9db76909eb680e1695cd1e36
 
 build:
-  number: 1
+  number: 0
   skip: true  # [osx]
-  number: 1
-  skip: true  # [win or osx]
-
 requirements:
   build:
     - pkg-config
@@ -52,20 +49,20 @@ test:
     - mlpack_knn --help
 
 about:
-    home: http://www.mlpack.org
-    license: BSD-3.0
-    license_file: LICENSE.txt
-    summary: 'mlpack a fast, flexible machine learning library'
-    description: |
-      mlpack is an intuitive, fast, and flexible C++ machine learning library
-      with bindings to other languages. It is meant to be a machine learning analog
-      to LAPACK, and aims to implement a wide array of machine learning methods and
-      functions as a "swiss army knife" for machine learning researchers. In addition
-      to its powerful C++ interface, mlpack also provides command-line programs and
-      Python bindings.
-    doc_url: http://www.mlpack.org/docs.html
-    dev_url: https://github.com/mlpack/mlpack
+  home: http://www.mlpack.org
+  license: BSD-3-Clause
+  license_file: LICENSE.txt
+  summary: mlpack a fast, flexible machine learning library
+  description: |
+    mlpack is an intuitive, fast, and flexible C++ machine learning library
+    with bindings to other languages. It is meant to be a machine learning analog
+    to LAPACK, and aims to implement a wide array of machine learning methods and
+    functions as a "swiss army knife" for machine learning researchers. In addition
+    to its powerful C++ interface, mlpack also provides command-line programs and
+    Python bindings.
+  doc_url: http://www.mlpack.org/docs.html
+  dev_url: https://github.com/mlpack/mlpack
 
 extra:
-    recipe-maintainers:
-      - marcelotrevisani
+  recipe-maintainers:
+    - marcelotrevisani
