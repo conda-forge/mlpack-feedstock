@@ -1,11 +1,10 @@
-mkdir -p build
-pushd build
+mkdir build
+cd build
 
-cmake %SRC_DIR% -G "Ninja" ^
+cmake -GNinja ^
       -DCMAKE_INSTALL_PREFIX=%LIBRARY_PREFIX% ^
       -DCMAKE_PREFIX_PATH=%LIBRARY_PREFIX% ^
-      --DCMAKE_BUILD_TYPE=Debug ^
-      -DCMAKE_BUILD_TYPE=Release ^
+      -DCMAKE_BUILD_TYPE="Debug" ^
       -DBUILD_PYTHON_BINDINGS=ON ^
       -DBUILD_CLI_EXECUTABLES=ON ^
       -DBUILD_SHARED_LIBS=OFF ^
@@ -18,7 +17,7 @@ cmake %SRC_DIR% -G "Ninja" ^
       -DCMAKE_CXX_COMPILER=cl.exe ^
       -DCMAKE_C_COMPILER=cl.exe ^
       -DBoost_INCLUDE_DIRS=%LIBRARY_PREFIX%/include ^
-      -DBOOST_ALL_NO_LIB=1 ^
+      -DCMAKE_CXX_FLAGS="-DBOOST_ALL_NO_LIB=1" ^
       -DENSMALLEN_INCLUDE_DIR=%LIBRARY_PREFIX%/include ^
       -DARMADILLO_INCLUDE_DIR=%LIBRARY_PREFIX%/include ^
       -DARMADILLO_LIBRARIES=%LIBRARY_PREFIX%/lib/armadillo.lib ^
@@ -27,5 +26,4 @@ cmake %SRC_DIR% -G "Ninja" ^
       -DCMAKE_INSTALL_LIBDIR=lib ^
       ..
 
-ninja
-ninja install
+cmake --build . --target install --config Debug
