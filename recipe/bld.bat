@@ -2,6 +2,7 @@ mkdir build
 cd build
 
 cmake %SRC_DIR% -G "Ninja" ^
+      --trace
       -DCMAKE_INSTALL_PREFIX=%LIBRARY_PREFIX% ^
       -DCMAKE_PREFIX_PATH=%LIBRARY_PREFIX% ^
       -DCMAKE_BUILD_TYPE="Release" ^
@@ -27,4 +28,4 @@ cmake %SRC_DIR% -G "Ninja" ^
       -DBoost_LIB_DIAGNOSTIC_DEFINITIONS=1 ^
       ..
 
-cmake --trace . --target install --config Release
+cmake --build . --target install --config Release
