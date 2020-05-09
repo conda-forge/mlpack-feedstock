@@ -24,6 +24,7 @@ cmake %SRC_DIR% -G "Ninja" ^
       -DCMAKE_INSTALL_RPATH_USE_LINK_PATH=true ^
       -DCOTIRE_MINIMUM_NUMBER_OF_TARGET_SOURCES=100000 ^
       -DCMAKE_INSTALL_LIBDIR=lib ^
+      -DBoost_LIB_DIAGNOSTIC_DEFINITIONS=1 ^
       ..
 
-cmake --build . --target install --config Release
+cmake --trace . --target install --config Release
