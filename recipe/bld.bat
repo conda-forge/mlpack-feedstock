@@ -18,7 +18,8 @@ cmake %SRC_DIR% -G "Ninja" ^
       -DCMAKE_CXX_COMPILER=cl.exe ^
       -DCMAKE_C_COMPILER=cl.exe ^
       -DBoost_INCLUDE_DIRS=%LIBRARY_PREFIX%/include ^
-      -DBoost_USE_STATIC_LIBS=ON
+      -DCMAKE_CXX_FLAGS="-DBOOST_ALL_NO_LIB=1" ^
+      -DBoost_USE_STATIC_LIBS=ON ^
       -DENSMALLEN_INCLUDE_DIR=%LIBRARY_PREFIX%/include ^
       -DARMADILLO_INCLUDE_DIR=%LIBRARY_PREFIX%/include ^
       -DARMADILLO_LIBRARIES="%LIBRARY_PREFIX%/lib/armadillo.lib;%LIBRARY_PREFIX%/lib/openblas.lib" ^
