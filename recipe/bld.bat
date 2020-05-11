@@ -23,10 +23,13 @@ cmake %SRC_DIR% -G "Ninja" ^
       -DARMADILLO_INCLUDE_DIR=%LIBRARY_PREFIX%/include ^
       -DARMADILLO_LIBRARIES="%LIBRARY_PREFIX%/lib/armadillo.lib" ^
       -D_ARMA_SUPPORT_LIBRARIES="%LIBRARY_PREFIX%/lib/openblas.lib" ^
+      -DARMA_EXTRA_DEBUG=OFF ^
       -DCMAKE_INSTALL_RPATH_USE_LINK_PATH=true ^
       -DCOTIRE_MINIMUM_NUMBER_OF_TARGET_SOURCES=100000 ^
       -DCMAKE_INSTALL_LIBDIR=lib ^
-      -DBoost_LIB_DIAGNOSTIC_DEFINITIONS=1 ^
+      -DCMAKE_CXX_FLAGS="-DBoost_LIB_DIAGNOSTIC_DEFINITIONS=1" ^
+      -DBoost_DEBUG=1 ^
       ..
 
+ls %LIBRARY_PREFIX%/lib
 cmake --build . --target install --config Release
