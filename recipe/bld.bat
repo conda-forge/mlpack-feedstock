@@ -17,7 +17,7 @@ cmake %SRC_DIR% -G "Ninja" ^
       -DCMAKE_CXX_COMPILER=cl.exe ^
       -DCMAKE_C_COMPILER=cl.exe ^
       -DBoost_INCLUDE_DIRS=%LIBRARY_PREFIX%/include ^
-      -DBoost_USE_STATIC_LIBS=ON ^
+      -DBoost_USE_STATIC_LIBS=OFF ^
       -DBoost_USE_STATIC_RUNTIME=OFF ^
       -DENSMALLEN_INCLUDE_DIR=%LIBRARY_PREFIX%/include ^
       -DARMADILLO_INCLUDE_DIR=%LIBRARY_PREFIX%/include ^
