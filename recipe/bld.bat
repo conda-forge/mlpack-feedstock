@@ -29,6 +29,7 @@ cmake %SRC_DIR% -G "Ninja" ^
       -DCMAKE_INSTALL_LIBDIR=lib ^
       -DCMAKE_CXX_FLAGS="-DBOOST_LIB_DIAGNOSTIC=1" ^
       -DBoost_DEBUG=1 ^
+      -DCMAKE_WINDOWS_EXPORT_ALL_SYMBOLS=ON ^
       ..
 
 ls %LIBRARY_PREFIX%/lib
