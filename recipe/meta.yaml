@@ -33,6 +33,7 @@ requirements:
     - ensmallen >=2.10.0
     - libcblas
     - libblas
+    - openmp
   run:
     - boost
     - python
