@@ -14,8 +14,6 @@ cmake %SRC_DIR% -G "Ninja" ^
       -DDOWNLOAD_ENSMALLEN=OFF ^
       -DPYTHON_EXECUTABLE=%PYTHON% ^
       -DUSE_OPENMP=ON ^
-      -DCMAKE_CXX_COMPILER=cl.exe ^
-      -DCMAKE_C_COMPILER=cl.exe ^
       -DBoost_INCLUDE_DIRS=%LIBRARY_PREFIX%/include ^
       -DBoost_USE_STATIC_LIBS=OFF ^
       -DBoost_USE_STATIC_RUNTIME=OFF ^
