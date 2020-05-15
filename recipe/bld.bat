@@ -24,8 +24,7 @@ cmake %SRC_DIR% -G "Ninja" ^
       -DCOTIRE_MINIMUM_NUMBER_OF_TARGET_SOURCES=100000 ^
       -DCMAKE_INSTALL_LIBDIR=lib ^
       -DCMAKE_WINDOWS_EXPORT_ALL_SYMBOLS=ON ^
-      -DCMAKE_EXE_LINKER_FLAGS="/NODEFAULTLIB" ^
+      -DCMAKE_EXE_LINKER_FLAGS="-DNODEFAULTLIB=msvcrtd.lib" ^
       ..
 
-ls %LIBRARY_PREFIX%/lib
 cmake --build . --target install --config Release
