@@ -10,13 +10,13 @@ source:
 
 build:
   number: 0
-  skip: true  # [win or osx]
-
+  skip: true  # [osx]
 requirements:
   build:
     - pkg-config
     - cmake
     - make
+    - ninja  # [win]
     - cotire
     - {{ compiler('c') }}
     - {{ compiler('cxx') }}
@@ -27,17 +27,18 @@ requirements:
     - python
     - numpy
     - pandas  >=0.15.0
-    - armadillo >=6.500.0
+    - armadillo >=9.200.4
     - pytest-runner
     - openblas
     - ensmallen >=2.10.0
     - libcblas
     - libblas
+    - openmp
   run:
     - boost
     - python
     - pandas  >=0.15.0
-    - armadillo >=6.500.0
+    - armadillo >=9.200.4
     - openblas
     - {{ pin_compatible('numpy') }}
     - ensmallen >=2.10.0
