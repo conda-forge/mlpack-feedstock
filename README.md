@@ -3,7 +3,7 @@ About mlpack
 
 Home: http://www.mlpack.org
 
-Package license: BSD-3.0
+Package license: BSD-3-Clause
 
 Feedstock license: BSD 3-Clause
 
