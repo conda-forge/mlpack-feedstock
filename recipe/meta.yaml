@@ -1,12 +1,12 @@
-{% set version = "3.4.2" %}
+{% set version = "4.0.0-prev1" %}
 
 package:
   name: mlpack
   version: {{ version }}
 
 source:
-  url: http://www.mlpack.org/files/mlpack-{{ version }}.tar.gz
-  sha256: 9e5c4af5c276c86a0dcc553289f6fe7b1b340d61c1e59844b53da0debedbb171
+  url: https://github.com/mlpack/mlpack/archive/refs/heads/master.zip
+  sha256: 91f1609e58224c144a4d9c3c286a59e5c114ad83b1c3eda93e050d3dc5af79f6
 
 build:
   number: 2
@@ -27,7 +27,7 @@ requirements:
     - python
     - numpy
     - pandas  >=0.15.0
-    - armadillo >=6.500.0
+    - armadillo >=9.800.0
     - pytest-runner
     - openblas
     - ensmallen >=2.10.0
@@ -37,7 +37,7 @@ requirements:
     - boost
     - python
     - pandas  >=0.15.0
-    - armadillo >=6.500.0
+    - armadillo >=9.800.0
     - openblas
     - {{ pin_compatible('numpy') }}
     - ensmallen >=2.10.0
