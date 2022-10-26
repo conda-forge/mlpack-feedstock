@@ -21,13 +21,7 @@ cmake \
 	-DCMAKE_VERBOSE_MAKEFILE:BOOL=ON \
 	-DCMAKE_INSTALL_RPATH_USE_LINK_PATH=true \
 	-DCOTIRE_MINIMUM_NUMBER_OF_TARGET_SOURCES=100000 \
-	-DCMAKE_INSTALL_LIBDIR=lib \
 	..
 
 make -j${CPU_COUNT}
 make install
-
-
-# Workaround as the python symbols are in ``libmlpack.so`` located in ``lib``
-ln -s ${PREFIX}/lib/libmlpack.so ${SP_DIR}/libmlpack.so
-

@@ -1,4 +1,4 @@
-{% set version = "3.4.2" %}
+{% set version = "4.0.0" %}
 
 package:
   name: mlpack
@@ -6,10 +6,10 @@ package:
 
 source:
   url: http://www.mlpack.org/files/mlpack-{{ version }}.tar.gz
-  sha256: 9e5c4af5c276c86a0dcc553289f6fe7b1b340d61c1e59844b53da0debedbb171
+  sha256: 041d9eee96445667d2f7b970d2a799592027f1f8818cd96a65dcce1ac0745773
 
 build:
-  number: 2
+  number: 0
   skip: true  # [win or osx]
 
 requirements:
@@ -23,21 +23,20 @@ requirements:
   host:
     - cython >=0.24
     - setuptools
-    - boost
+    - cereal
     - python
     - numpy
     - pandas  >=0.15.0
-    - armadillo >=6.500.0
+    - armadillo >=9.800.0
     - pytest-runner
     - openblas
     - ensmallen >=2.10.0
     - libcblas
     - libblas
   run:
-    - boost
     - python
     - pandas  >=0.15.0
-    - armadillo >=6.500.0
+    - armadillo >=9.800.0
     - openblas
     - {{ pin_compatible('numpy') }}
     - ensmallen >=2.10.0
@@ -52,7 +51,7 @@ about:
   home: http://www.mlpack.org
   license: BSD-3-Clause
   license_file: LICENSE.txt
-  summary: mlpack a fast, flexible machine learning library
+  summary: "mlpack: a fast, header-only machine learning library"
   description: |
     mlpack is an intuitive, fast, and flexible C++ machine learning library
     with bindings to other languages. It is meant to be a machine learning analog
