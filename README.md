@@ -7,7 +7,7 @@ Package license: BSD-3-Clause
 
 Feedstock license: [BSD-3-Clause](https://github.com/conda-forge/mlpack-feedstock/blob/main/LICENSE.txt)
 
-Summary: mlpack, a fast, header-only machine learning library
+Summary: mlpack: a fast, header-only machine learning library
 
 Development: https://github.com/mlpack/mlpack
 
