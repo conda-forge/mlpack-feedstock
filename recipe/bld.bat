@@ -16,4 +16,4 @@ cmake %SRC_DIR% -G "Ninja" ^
     -DCMAKE_WINDOWS_EXPORT_ALL_SYMBOLS=ON ^
     ..
 
-cmake --build . --target install --config Release
+cmake --build . --target install --config Release -j1
