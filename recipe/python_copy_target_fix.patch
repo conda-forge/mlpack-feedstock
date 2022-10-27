@@ -1,25 +1,27 @@
-From d0252f78afd4e14b704685f95e51574fa3182ec8 Mon Sep 17 00:00:00 2001
+From c7d85760a33888e27ba67834ada4fdaf61713fa5 Mon Sep 17 00:00:00 2001
 From: Ryan Curtin <ryan@ratml.org>
-Date: Thu, 27 Oct 2022 15:25:25 -0400
-Subject: [PATCH] Make python depend on python_copy directly.
+Date: Thu, 27 Oct 2022 16:27:25 -0400
+Subject: [PATCH] Remove dependency of python_copy on mlpack.
 
 ---
- src/mlpack/bindings/python/CMakeLists.txt | 2 +-
- 1 file changed, 1 insertion(+), 1 deletion(-)
+ src/mlpack/bindings/python/CMakeLists.txt | 4 ++--
+ 1 file changed, 2 insertions(+), 2 deletions(-)
 
 diff --git a/src/mlpack/bindings/python/CMakeLists.txt b/src/mlpack/bindings/python/CMakeLists.txt
-index 2d240a88eb..ca05c962d2 100644
+index 2d240a88eb..fb99f3c8d7 100644
 --- a/src/mlpack/bindings/python/CMakeLists.txt
 +++ b/src/mlpack/bindings/python/CMakeLists.txt
-@@ -125,7 +125,7 @@ if (DEBUG)
+@@ -125,8 +125,8 @@ if (DEBUG)
    set(DISABLE_CFLAGS "NDEBUG;MLPACK_HAS_BFD_DL" PARENT_SCOPE)
  endif ()
  
 -add_custom_target(python ALL DEPENDS mlpack)
+-add_custom_target(python_copy ALL DEPENDS mlpack)
 +add_custom_target(python ALL DEPENDS python_copy)
- add_custom_target(python_copy ALL DEPENDS mlpack)
++add_custom_target(python_copy ALL)
  # The python_configure target is added later; this is a dummy target.
  add_custom_target(python_configured ALL)
+ 
 -- 
 2.37.2
 
