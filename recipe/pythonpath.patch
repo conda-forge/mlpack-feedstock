@@ -15,7 +15,7 @@ index 32fc98eed2..65cd70e409 100644
        WORKING_DIRECTORY "${CMAKE_BINARY_DIR}/src/mlpack/bindings/python/"
        RESULT_VARIABLE setup_res)
  else ()
-+  set(ENV{PYTHONPATH} ${PYTHON_INSTALL_PREFIX}\Lib\site-packages)
++  set(ENV{PYTHONPATH} ${PYTHON_INSTALL_PREFIX}\\Lib\\site-packages)
    execute_process(COMMAND ${PYTHON_EXECUTABLE}
        "${CMAKE_BINARY_DIR}/src/mlpack/bindings/python/setup.py" install
            --prefix=${PYTHON_INSTALL_PREFIX}
