@@ -1,0 +1,24 @@
+From 8d7248068d85c7ff816a18fd556621e5e7831a9e Mon Sep 17 00:00:00 2001
+From: Ryan Curtin <ryan@ratml.org>
+Date: Mon, 31 Oct 2022 13:31:14 -0400
+Subject: [PATCH] Try to set PYTHONPATH.
+
+---
+ src/mlpack/bindings/python/PythonInstall.cmake | 1 +
+ 1 file changed, 1 insertion(+)
+
+diff --git a/src/mlpack/bindings/python/PythonInstall.cmake b/src/mlpack/bindings/python/PythonInstall.cmake
+index 32fc98eed2..65cd70e409 100644
+--- a/src/mlpack/bindings/python/PythonInstall.cmake
++++ b/src/mlpack/bindings/python/PythonInstall.cmake
+@@ -11,6 +11,7 @@ if (DEFINED ENV{DESTDIR})
+       WORKING_DIRECTORY "${CMAKE_BINARY_DIR}/src/mlpack/bindings/python/"
+       RESULT_VARIABLE setup_res)
+ else ()
++  set(ENV{PYTHONPATH} "${PYTHON_INSTALL_PREFIX}\Lib\site-packages")
+   execute_process(COMMAND ${PYTHON_EXECUTABLE}
+       "${CMAKE_BINARY_DIR}/src/mlpack/bindings/python/setup.py" install
+           --prefix=${PYTHON_INSTALL_PREFIX}
+-- 
+2.37.2
+
