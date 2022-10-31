@@ -20,10 +20,11 @@ index 32fc98eed2..40db822c17 100644
        WORKING_DIRECTORY "${CMAKE_BINARY_DIR}/src/mlpack/bindings/python/"
        RESULT_VARIABLE setup_res)
  else ()
++  set(ENV{PYTHONPATH} "${PYTHON_INSTALL_PREFIX}\Lib\site-packages\")
    execute_process(COMMAND ${PYTHON_EXECUTABLE}
        "${CMAKE_BINARY_DIR}/src/mlpack/bindings/python/setup.py" install
 -          --prefix=${PYTHON_INSTALL_PREFIX}
-+          --install-dir=${PYTHON_INSTALL_PREFIX}/lib/python3.8/site-packages/
++          --prefix=${PYTHON_INSTALL_PREFIX} 
        WORKING_DIRECTORY "${CMAKE_BINARY_DIR}/src/mlpack/bindings/python/"
        RESULT_VARIABLE setup_res)
  endif ()
