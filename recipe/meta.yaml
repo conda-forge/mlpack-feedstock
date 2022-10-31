@@ -10,6 +10,7 @@ source:
   patches:
     - python_copy_target_fix.patch
     - setup_py_msvc.patch
+    - cmake_debug_output.patch
 
 build:
   number: 2

@@ -1,0 +1,53 @@
+From 2ffc4cf2d35eb4cc64ecd7417376b31df6364d05 Mon Sep 17 00:00:00 2001
+From: Ryan Curtin <ryan@ratml.org>
+Date: Sun, 30 Oct 2022 22:20:21 -0400
+Subject: [PATCH] Try to get debugging output.
+
+---
+ src/mlpack/bindings/python/CMakeLists.txt      | 3 +++
+ src/mlpack/bindings/python/PythonInstall.cmake | 2 ++
+ 2 files changed, 5 insertions(+)
+
+diff --git a/src/mlpack/bindings/python/CMakeLists.txt b/src/mlpack/bindings/python/CMakeLists.txt
+index fb99f3c8d7..3769a3b140 100644
+--- a/src/mlpack/bindings/python/CMakeLists.txt
++++ b/src/mlpack/bindings/python/CMakeLists.txt
+@@ -191,6 +191,7 @@ add_dependencies(python python_configured)
+ 
+ # Configure installation script file.
+ if (NOT PYTHON_INSTALL_PREFIX)
++  message(STATUS "Set PYTHON_INSTALL_PREFIX to ${CMAKE_INSTALL_PREFIX}\n")
+   set(PYTHON_INSTALL_PREFIX "${CMAKE_INSTALL_PREFIX}")
+ endif ()
+ 
+@@ -199,11 +200,13 @@ execute_process(COMMAND ${PYTHON_EXECUTABLE}
+     "${PYTHON_INSTALL_PREFIX}"
+     OUTPUT_VARIABLE CMAKE_PYTHON_PATH)
+ string(STRIP "${CMAKE_PYTHON_PATH}" CMAKE_PYTHON_PATH)
++message(STATUS "Set CMAKE_PYTHON_PATH to ${CMAKE_PYTHON_PATH}\n")
+ install(CODE "set(ENV{PYTHONPATH} ${CMAKE_PYTHON_PATH})")
+ install(CODE "set(PYTHON_EXECUTABLE \"${PYTHON_EXECUTABLE}\")")
+ install(CODE "set(CMAKE_BINARY_DIR \"${CMAKE_BINARY_DIR}\")")
+ 
+ install(CODE "set(PYTHON_INSTALL_PREFIX \"${PYTHON_INSTALL_PREFIX}\")")
++message(STATUS "PYTHON_INSTALL_PREFIX is ${PYTHON_INSTALL_PREFIX}\n")
+ install(CODE "execute_process(COMMAND mkdir -p $ENV{DESTDIR}${CMAKE_PYTHON_PATH})")
+ install(SCRIPT "${CMAKE_CURRENT_SOURCE_DIR}/PythonInstall.cmake")
+ 
+diff --git a/src/mlpack/bindings/python/PythonInstall.cmake b/src/mlpack/bindings/python/PythonInstall.cmake
+index 6e25fb926e..32fc98eed2 100644
+--- a/src/mlpack/bindings/python/PythonInstall.cmake
++++ b/src/mlpack/bindings/python/PythonInstall.cmake
+@@ -2,7 +2,9 @@
+ #
+ # A utility script to install Python bindings and fail fatally if installation
+ # was not successful.
++message(STATUS "PYTHON_INSTALL_PREFIX at install time is ${PYTHON_INSTALL_PREFIX}\n")
+ if (DEFINED ENV{DESTDIR})
++  message(STATUS "DESTDIR is ${ENV{DESTDIR}}\n")
+   execute_process(COMMAND ${PYTHON_EXECUTABLE}
+       "${CMAKE_BINARY_DIR}/src/mlpack/bindings/python/setup.py" install
+           --prefix=${PYTHON_INSTALL_PREFIX} --root=$ENV{DESTDIR}
+-- 
+2.37.2
+
