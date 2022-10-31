@@ -1,0 +1,32 @@
+From 92ea26a34612997b10bd13e8fba605007f41910f Mon Sep 17 00:00:00 2001
+From: Ryan Curtin <ryan@ratml.org>
+Date: Mon, 31 Oct 2022 08:50:51 -0400
+Subject: [PATCH] Add quotation marks in case this is a \\ issue...
+
+---
+ src/mlpack/bindings/python/PythonInstall.cmake | 4 ++--
+ 1 file changed, 2 insertions(+), 2 deletions(-)
+
+diff --git a/src/mlpack/bindings/python/PythonInstall.cmake b/src/mlpack/bindings/python/PythonInstall.cmake
+index 32fc98eed2..40db822c17 100644
+--- a/src/mlpack/bindings/python/PythonInstall.cmake
++++ b/src/mlpack/bindings/python/PythonInstall.cmake
+@@ -7,13 +7,13 @@ if (DEFINED ENV{DESTDIR})
+   message(STATUS "DESTDIR is ${ENV{DESTDIR}}\n")
+   execute_process(COMMAND ${PYTHON_EXECUTABLE}
+       "${CMAKE_BINARY_DIR}/src/mlpack/bindings/python/setup.py" install
+-          --prefix=${PYTHON_INSTALL_PREFIX} --root=$ENV{DESTDIR}
++          --prefix="${PYTHON_INSTALL_PREFIX}" --root="$ENV{DESTDIR}"
+       WORKING_DIRECTORY "${CMAKE_BINARY_DIR}/src/mlpack/bindings/python/"
+       RESULT_VARIABLE setup_res)
+ else ()
+   execute_process(COMMAND ${PYTHON_EXECUTABLE}
+       "${CMAKE_BINARY_DIR}/src/mlpack/bindings/python/setup.py" install
+-          --prefix=${PYTHON_INSTALL_PREFIX}
++          --prefix="${PYTHON_INSTALL_PREFIX}"
+       WORKING_DIRECTORY "${CMAKE_BINARY_DIR}/src/mlpack/bindings/python/"
+       RESULT_VARIABLE setup_res)
+ endif ()
+-- 
+2.37.2
+
