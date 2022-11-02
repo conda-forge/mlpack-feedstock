@@ -11,7 +11,7 @@ source:
     - python_copy_target_fix.patch
     - setup_py_msvc.patch
     - cmake_debug_output.patch
-    - setup-prefix.patch
+    - win_py_install_prefix.patch
 
 build:
   number: 2
