@@ -7,16 +7,21 @@ package:
 source:
   url: http://www.mlpack.org/files/mlpack-{{ version }}.tar.gz
   sha256: 041d9eee96445667d2f7b970d2a799592027f1f8818cd96a65dcce1ac0745773
+  patches:
+    - python_copy_target_fix.patch
+    - setup_py_msvc.patch
+    - win_py_install_prefix.patch
 
 build:
-  number: 2
-  skip: true  # [win or osx]
+  number: 3
+  skip: true  # [osx]
 
 requirements:
   build:
     - pkg-config
     - cmake
     - make
+    - ninja  # [win]
     - cotire
     - {{ compiler('c') }}
     - {{ compiler('cxx') }}
