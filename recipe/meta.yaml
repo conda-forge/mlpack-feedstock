@@ -14,7 +14,7 @@ source:
     - win_py_install_prefix.patch
 
 build:
-  number: 2
+  number: 3
   skip: true  # [osx]
 
 requirements:
