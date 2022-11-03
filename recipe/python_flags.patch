@@ -1,20 +1,21 @@
-From f1a9e2503f326f5b16f5fded8812b9983d62987a Mon Sep 17 00:00:00 2001
+From 303f5225ab0db848ae1e721aa5249ebe6ef1db23 Mon Sep 17 00:00:00 2001
 From: Ryan Curtin <ryan@ratml.org>
-Date: Thu, 3 Nov 2022 09:21:29 -0400
-Subject: [PATCH] Unified patch for Windows and OS X flags.
+Date: Thu, 3 Nov 2022 12:20:03 -0400
+Subject: [PATCH] Patch compilation options for Python.
 
 ---
- src/mlpack/bindings/python/setup.py.in | 22 ++++++++++++++++++----
- 1 file changed, 18 insertions(+), 4 deletions(-)
+ src/mlpack/bindings/python/setup.py.in | 23 ++++++++++++++++++-----
+ 1 file changed, 18 insertions(+), 5 deletions(-)
 
 diff --git a/src/mlpack/bindings/python/setup.py.in b/src/mlpack/bindings/python/setup.py.in
-index aabd85a6fb..a30660aa1f 100644
+index aabd85a6fb..8cac63b458 100644
 --- a/src/mlpack/bindings/python/setup.py.in
 +++ b/src/mlpack/bindings/python/setup.py.in
-@@ -49,16 +49,30 @@ else:
+@@ -49,16 +49,29 @@ else:
    extra_cxx_flags = re.sub(' +', ' ', cxx_flags)
    cxx_flags += ' '
    cxx_flags += extra_cxx_flags
+-  extra_args = ['-DBINDING_TYPE=BINDING_TYPE_PYX', '-std=c++14']
 +
 +  extra_args = []
 +  if platform.system() == 'Windows':
@@ -33,7 +34,6 @@ index aabd85a6fb..a30660aa1f 100644
 +    extra_args.append('-g0')
 +    extra_link_args.append('-Wl,--strip-all')
 +
-   extra_args = ['-DBINDING_TYPE=BINDING_TYPE_PYX', '-std=c++14']
    if '${OpenMP_CXX_FLAGS}' != '':
      extra_args.append('${OpenMP_CXX_FLAGS}')
    if cxx_flags:
