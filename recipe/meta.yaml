@@ -16,7 +16,7 @@ source:
 build:
   number: 4
   script_env:
-    - CMAKE_CXX_FLAGS="-D_LIBCPP_DISABLE_AVAILABILITY"  # [osx]
+    - CXXFLAGS="-D_LIBCPP_DISABLE_AVAILABILITY"  # [osx]
 
 requirements:
   build:
