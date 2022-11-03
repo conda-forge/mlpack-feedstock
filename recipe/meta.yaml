@@ -11,6 +11,8 @@ source:
     - python_copy_target_fix.patch
     - setup_py_msvc.patch
     - win_py_install_prefix.patch
+    - osx_cmake.patch
+    - python_flags.patch
 
 build:
   number: 4
