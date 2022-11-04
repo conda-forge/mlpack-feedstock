@@ -12,6 +12,7 @@ source:
     - win_py_install_prefix.patch
     - osx_cmake.patch
     - python_flags.patch
+    - osx_link_m.patch
 
 build:
   number: 4
