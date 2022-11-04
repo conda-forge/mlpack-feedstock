@@ -19,5 +19,5 @@ cmake \
         ..
 
 make -j${CPU_COUNT}
-ctest .
+CTEST_OUTPUT_ON_FAILURE=1 ctest .
 make install
