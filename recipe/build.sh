@@ -19,5 +19,11 @@ cmake \
         ..
 
 make -j${CPU_COUNT}
+
+# Try running the test by hand.
+cd src/mlpack/bindings/python/
+NO_BUILD=1 python setup.py test
+cd ../../../../
+
 CTEST_OUTPUT_ON_FAILURE=1 ctest .
 make install
