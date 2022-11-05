@@ -21,6 +21,13 @@ cmake \
 make -j${CPU_COUNT}
 
 echo ""
+echo "import mlpack test"
+echo ""
+cd src/mlpack/bindings/python/
+python -c "import mlpack"
+cd ../../../../
+
+echo ""
 echo "list binding directory"
 echo ""
 ls -lh src/mlpack/bindings/python/mlpack/
