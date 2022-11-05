@@ -20,10 +20,21 @@ cmake \
 
 make -j${CPU_COUNT}
 
+echo ""
+echo "list binding directory"
+echo ""
+ls -lh src/mlpack/bindings/python/mlpack/
+
 # Try running the test by hand.
+echo ""
+echo "run the tests"
+echo ""
 cd src/mlpack/bindings/python/
 NO_BUILD=1 python setup.py test
 cd ../../../../
 
+echo ""
+echo "run the tests via ctest"
+echo ""
 CTEST_OUTPUT_ON_FAILURE=1 ctest .
 make install
