@@ -27,21 +27,4 @@ cd src/mlpack/bindings/python/
 python -c "import mlpack; import numpy as np; x = np.random.rand(100, 10); o = mlpack.pca(input_=x, new_dimensionality=5, verbose=True)"
 cd ../../../../
 
-echo ""
-echo "list binding directory"
-echo ""
-ls -lh src/mlpack/bindings/python/mlpack/
-
-# Try running the test by hand.
-echo ""
-echo "run the tests"
-echo ""
-cd src/mlpack/bindings/python/
-NO_BUILD=1 python setup.py test
-cd ../../../../
-
-echo ""
-echo "run the tests via ctest"
-echo ""
-CTEST_OUTPUT_ON_FAILURE=1 ctest .
 make install
