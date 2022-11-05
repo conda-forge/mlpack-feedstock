@@ -9,7 +9,7 @@ cmake \
         -DBUILD_PYTHON_BINDINGS=ON \
         -DBUILD_CLI_EXECUTABLES=ON \
         -DBUILD_SHARED_LIBRARIES=ON \
-        -DBUILD_TESTS=OFF \
+        -DBUILD_TESTS=ON \
         -DDOWNLOAD_DEPENDENCIES=ON \
         -DPYTHON_EXECUTABLE="${PYTHON}" \
         -DUSE_OPENMP=ON \
@@ -24,7 +24,7 @@ echo ""
 echo "import mlpack test"
 echo ""
 cd src/mlpack/bindings/python/
-python -c "import mlpack"
+python -c "import mlpack; import numpy as np; x = np.random.rand(100, 10); o = mlpack.pca(input_=x, new_dimensionality=5, verbose=True)"
 cd ../../../../
 
 echo ""
