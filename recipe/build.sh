@@ -44,6 +44,7 @@ ${PYTHON} --version
 echo ""
 echo "show setuptools version"
 echo ""
+conda install -c anaconda pip
 ${PYTHON} -m pip show setuptools
 
-make install
+VERBOSE=1 make install
