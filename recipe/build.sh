@@ -24,7 +24,7 @@ echo ""
 echo "import mlpack test"
 echo ""
 cd src/mlpack/bindings/python/
-python -c "import mlpack; import numpy as np; x = np.random.rand(100, 10); o = mlpack.pca(input_=x, new_dimensionality=5, verbose=True)"
+${PYTHON} -c "import mlpack; import numpy as np; x = np.random.rand(100, 10); o = mlpack.pca(input_=x, new_dimensionality=5, verbose=True)"
 cd ../../../../
 
 sed -i.bak 's/setup.py" install/setup.py" --verbose install/g' ../src/mlpack/bindings/python/PythonInstall.cmake
@@ -37,8 +37,12 @@ echo ""
 cat src/mlpack/bindings/python/setup.py
 
 echo ""
+echo "show python: ${PYTHON}"
+echo ""
+
+echo ""
 echo "show setuptools version"
 echo ""
-pip show setuptools
+${PYTHON} -m pip show setuptools
 
 make install
