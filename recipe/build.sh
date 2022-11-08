@@ -36,4 +36,9 @@ echo "print setup.py"
 echo ""
 cat src/mlpack/bindings/python/setup.py
 
+echo ""
+echo "show setuptools version"
+echo ""
+pip show setuptools
+
 make install
