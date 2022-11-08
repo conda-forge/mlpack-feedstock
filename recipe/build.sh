@@ -39,6 +39,7 @@ cat src/mlpack/bindings/python/setup.py
 echo ""
 echo "show python: ${PYTHON}"
 echo ""
+${PYTHON} --version
 
 echo ""
 echo "show setuptools version"
