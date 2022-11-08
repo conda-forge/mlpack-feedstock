@@ -27,8 +27,9 @@ cd src/mlpack/bindings/python/
 python -c "import mlpack; import numpy as np; x = np.random.rand(100, 10); o = mlpack.pca(input_=x, new_dimensionality=5, verbose=True)"
 cd ../../../../
 
-sed -i.bak 's/setup.py" install/setup.py" --verbose install/g' src/mlpack/bindings/python/setup.py
-rm -f src/mlpack/bindings/python/setup.py.bak
+sed -i.bak 's/setup.py" install/setup.py" --verbose install/g' src/mlpack/bindings/python/PythonInstall.cmake
+rm -f src/mlpack/bindings/python/PythonInstall.cmake
+cat src/mlpack/bindings/python/PythonInstall.cmake
 
 echo ""
 echo "print setup.py"
