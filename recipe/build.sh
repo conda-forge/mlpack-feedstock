@@ -46,11 +46,3 @@ echo "attempt standalone install"
 echo ""
 cd src/mlpack/bindings/python
 ${PYTHON} setup.py install
-
-echo ""
-echo "show setuptools version"
-echo ""
-conda install -c anaconda pip
-${PYTHON} -m pip show setuptools
-
-VERBOSE=1 make install
