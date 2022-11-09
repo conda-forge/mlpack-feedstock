@@ -45,4 +45,4 @@ echo ""
 echo "attempt standalone install"
 echo ""
 cd src/mlpack/bindings/python
-${PYTHON} setup.py install
+${PYTHON} setup.py --verbose install
