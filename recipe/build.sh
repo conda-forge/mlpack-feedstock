@@ -42,7 +42,7 @@ echo ""
 ${PYTHON} --version
 
 echo ""
-echo "attempt standalone install"
+echo "attempt standalone install with pip"
 echo ""
 cd src/mlpack/bindings/python
-${PYTHON} setup.py --verbose install
+${PYTHON} -m pip install .
