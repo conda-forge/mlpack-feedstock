@@ -19,8 +19,8 @@ index 6e25fb926e..4325011414 100644
 -      "${CMAKE_BINARY_DIR}/src/mlpack/bindings/python/setup.py" install
 -          --prefix=${PYTHON_INSTALL_PREFIX} --root=$ENV{DESTDIR}
 +  execute_process(COMMAND ${PYTHON_EXECUTABLE} -m pip install
-+          --install-option="--prefix=${PYTHON_INSTALL_PREFIX}"
-+          --install-option="--root=$ENV{DESTDIR}" .
++          --prefix=${PYTHON_INSTALL_PREFIX}
++          --root=$ENV{DESTDIR} .
 +      WORKING_DIRECTORY "${CMAKE_BINARY_DIR}/src/mlpack/bindings/python/"
 +      RESULT_VARIABLE setup_res)
 +elseif (WIN32)
@@ -32,7 +32,7 @@ index 6e25fb926e..4325011414 100644
 -      "${CMAKE_BINARY_DIR}/src/mlpack/bindings/python/setup.py" install
 -          --prefix=${PYTHON_INSTALL_PREFIX}
 +  execute_process(COMMAND ${PYTHON_EXECUTABLE} -m pip install
-+          --install-option="--prefix=${PYTHON_INSTALL_PREFIX}" .
++          --prefix=${PYTHON_INSTALL_PREFIX} .
        WORKING_DIRECTORY "${CMAKE_BINARY_DIR}/src/mlpack/bindings/python/"
        RESULT_VARIABLE setup_res)
  endif ()
