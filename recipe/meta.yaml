@@ -18,7 +18,6 @@ build:
   number: 4
   script_env:
     - CXXFLAGS="-D_LIBCPP_DISABLE_AVAILABILITY"  # [osx]
-  skip: true  # [win or linux]
 
 requirements:
   build:

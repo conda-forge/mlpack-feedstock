@@ -19,15 +19,4 @@ cmake \
         ..
 
 make -j${CPU_COUNT}
-
-echo ""
-echo "import mlpack test"
-echo ""
-cd src/mlpack/bindings/python/
-${PYTHON} -c "import mlpack; import numpy as np; x = np.random.rand(100, 10); o = mlpack.pca(input_=x, new_dimensionality=5, verbose=True)"
-cd ../../../../
-
-echo ""
-echo "attempt install"
-echo ""
 make install
