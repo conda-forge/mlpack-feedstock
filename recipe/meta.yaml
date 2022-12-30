@@ -7,12 +7,6 @@ package:
 source:
   url: http://www.mlpack.org/files/mlpack-{{ version }}.tar.gz
   sha256: 4c746936ed9da9f16744240ed7b9f2815d3abb90c904071a1d1a628a9bbfb3a5
-  patches:
-    - python_copy_target_fix.patch
-    - osx_cmake.patch
-    - python_flags.patch
-    - osx_link_m.patch
-    - pip_install.patch
 
 build:
   number: 0
