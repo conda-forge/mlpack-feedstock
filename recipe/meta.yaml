@@ -9,7 +9,7 @@ source:
   sha256: f780df984a71029e62eeecdd145fb95deb71b133cefc7840de0ec706d116dd60
 
 build:
-  number: 0
+  number: 1
   script_env:
     - CXXFLAGS="-D_LIBCPP_DISABLE_AVAILABILITY"  # [osx]
 
