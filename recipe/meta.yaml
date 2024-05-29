@@ -9,7 +9,7 @@ source:
   sha256: 61c604026d05af26c244b0e47024698bbf150dfcc9d77b64057941d7d64d6cf6
 
 build:
-  number: 0
+  number: 1
   script_env:
     - CXXFLAGS="-D_LIBCPP_DISABLE_AVAILABILITY"  # [osx]
 
@@ -42,7 +42,6 @@ requirements:
     - pandas  >=0.15.0
     - armadillo >=9.800.0
     - openblas
-    - {{ pin_compatible('numpy') }}
     - ensmallen >=2.10.0
 test:
   imports:
