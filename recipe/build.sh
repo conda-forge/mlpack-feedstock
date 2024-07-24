@@ -1,6 +1,3 @@
-# Apply numpy2 patch until the next mlpack release.
-patch -p1 < ../numpy2.patch
-
 mkdir -p build
 cd build
 
