@@ -7,9 +7,6 @@ package:
 source:
   url: http://www.mlpack.org/files/mlpack-{{ version }}.tar.gz
   sha256: aab70aee10c134ef3fe568843fe4b3bb5e8901af30ea666f57462ad950682317
-  patches:
-    # xref: https://github.com/mlpack/mlpack/pull/3752
-    - numpy2.patch
 
 build:
   number: 0
