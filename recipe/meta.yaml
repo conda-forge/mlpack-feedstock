@@ -1,4 +1,4 @@
-{% set version = "4.4.0" %}
+{% set version = "4.5.0" %}
 
 package:
   name: mlpack
@@ -6,13 +6,10 @@ package:
 
 source:
   url: http://www.mlpack.org/files/mlpack-{{ version }}.tar.gz
-  sha256: 61c604026d05af26c244b0e47024698bbf150dfcc9d77b64057941d7d64d6cf6
-  patches:
-    # xref: https://github.com/mlpack/mlpack/pull/3752
-    - numpy2.patch
+  sha256: aab70aee10c134ef3fe568843fe4b3bb5e8901af30ea666f57462ad950682317
 
 build:
-  number: 1
+  number: 0
   script_env:
     - CXXFLAGS="-D_LIBCPP_DISABLE_AVAILABILITY"  # [osx]
 
