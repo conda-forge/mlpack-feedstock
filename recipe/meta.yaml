@@ -37,6 +37,7 @@ requirements:
     - libcblas
     - libblas
     - pip
+    - wheel
   run:
     - python
     - pandas  >=0.15.0
