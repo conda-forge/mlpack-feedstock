@@ -1,4 +1,4 @@
-{% set version = "4.5.0" %}
+{% set version = "4.6.1" %}
 
 package:
   name: mlpack
@@ -6,10 +6,10 @@ package:
 
 source:
   url: http://www.mlpack.org/files/mlpack-{{ version }}.tar.gz
-  sha256: aab70aee10c134ef3fe568843fe4b3bb5e8901af30ea666f57462ad950682317
+  sha256: 547771525f2eb4bb70458e7e9120e10612dadbde2bbf884917c5d44f82e54aad
 
 build:
-  number: 1
+  number: 0
   script_env:
     - CXXFLAGS="-D_LIBCPP_DISABLE_AVAILABILITY"  # [osx]
 
