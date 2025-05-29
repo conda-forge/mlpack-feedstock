@@ -1,5 +1,7 @@
 mkdir build
 cd build
+echo %LIBRARY_INC%
+dir %LIBRARY_INC%\
 echo %PREFIX%\Library\include
 dir %PREFIX%\Library\include
 
