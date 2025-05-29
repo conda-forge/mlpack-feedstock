@@ -1,7 +1,7 @@
 mkdir build
 cd build
-echo %INCLUDE%
-dir %INCLUDE%
+echo %PREFIX%\Library\include
+dir %PREFIX%\Library\include
 
 cmake %SRC_DIR% -G "Ninja" ^
     -DCMAKE_INSTALL_PREFIX=%LIBRARY_PREFIX% ^
@@ -12,7 +12,7 @@ cmake %SRC_DIR% -G "Ninja" ^
     -DBUILD_SHARED_LIBS=ON ^
     -DBUILD_TESTS=OFF ^
 `   -DDOWNLOAD_DEPENDENCIES=OFF ^
-    -DCEREAL_INCLUDE_DIR=%INCLUDE% ^
+    -DCEREAL_INCLUDE_DIR=%PREFIX%\Library\include ^
     -DUSE_OPENMP=OFF ^
     -DCMAKE_INSTALL_RPATH_USE_LINK_PATH=true ^
     -DCMAKE_WINDOWS_EXPORT_ALL_SYMBOLS=ON ^
