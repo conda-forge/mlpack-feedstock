@@ -7,6 +7,8 @@ package:
 source:
   url: http://www.mlpack.org/files/mlpack-{{ version }}.tar.gz
   sha256: a3f0fb530e51d51f8d7eceb7998b4699906d628000b158ada80541465595324e
+  patches:
+    - py_ccache_fix.patch
 
 build:
   number: 0
